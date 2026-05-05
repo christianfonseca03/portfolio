@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "about": "About",
+    "stack": "Stack",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "status": "Available for remote work",
+    "title_pre": "Full-stack",
+    "title_main": "developer",
+    "title_post": "building products that ship.",
+    "subtitle": "I design and build performant web applications with modern tooling — from interface to infrastructure.",
+    "cta_primary": "View projects",
+    "cta_secondary": "Get in touch",
+    "scroll": "Scroll",
+    "based": "Based in Brazil · Working globally"
+  },
+  "about": {
+    "kicker": "01 — About",
+    "title": "About me",
+    "p1": "I'm a full-stack developer focused on shipping clean, maintainable products that perform well in production. I work across the stack — from designing the interface in Figma to deploying the API.",
+    "p2": "Currently pursuing a postgraduate specialization in Full Stack Development at PUC-RS while expanding into AI and digital automation. I'm fluent in English and ready to collaborate with international teams remotely.",
+    "p3": "Outside the editor, I'm a fast learner who values clear communication, ownership, and shipping. I treat every project as a long-term partnership.",
+    "facts": [
+      { "k": "Location",     "v": "Porto Alegre, Brazil"  },
+      { "k": "Languages",    "v": "Portuguese · English"  },
+      { "k": "Availability", "v": "Open to remote roles"  },
+      { "k": "Focus",        "v": "Web · AI · Automation" }
+    ]
+  },
+  "stack": {
+    "kicker": "02 — Stack",
+    "title": "Tools of the trade",
+    "subtitle": "Technologies and skills I work with daily.",
+    "groups": {
+      "frontend": "Frontend",
+      "backend":  "Backend & Data",
+      "design":   "Design & Platforms",
+      "soft":     "Soft skills"
+    }
+  },
+  "projects": {
+    "kicker":   "03 — Selected work",
+    "title":    "Recent projects",
+    "subtitle": "A selection of work pulled from my GitHub. Click any card to view the repository.",
+    "view":     "View repo",
+    "live":     "Live"
+  },
+  "education": {
+    "kicker":          "04 — Education",
+    "title":           "Background",
+    "subtitle":        "Formal education and continuous learning.",
+    "status_progress": "In progress",
+    "status_done":     "Completed",
+    "extra_title":     "Continuous learning",
+    "extra_body":      "Beyond formal education, I take part in numerous specialized courses on web development, AI, design systems and software architecture."
+  },
+  "contact": {
+    "kicker":   "05 — Let's talk",
+    "title":    "Have a project in mind?",
+    "subtitle": "I'm currently available for remote opportunities and freelance work. Reach out through any channel below.",
+    "cta":      "Send a message",
+    "copy":     "Copy email",
+    "copied":   "Copied!",
+    "response": "Usually responds within 24 hours"
+  },
+  "footer": {
+    "built": "Built with Next.js · Designed and developed by Christian Fonseca",
+    "year":  "© 2026 Christian Fonseca. All rights reserved."
+  },
+  "easter": {
+    "title": "You found it.",
+    "body":  "Thanks for looking closely. That's the kind of attention I bring to every line of code.",
+    "close": "Nice"
+  }
+}

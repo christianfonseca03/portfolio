@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "about":     "Sobre",
+    "stack":     "Stack",
+    "projects":  "Projetos",
+    "education": "Formação",
+    "contact":   "Contato"
+  },
+  "hero": {
+    "status":     "Disponível para trabalho remoto",
+    "title_pre":  "Desenvolvedor",
+    "title_main": "full-stack",
+    "title_post": "criando produtos que entregam.",
+    "subtitle":   "Desenho e desenvolvo aplicações web performáticas com ferramentas modernas — da interface à infraestrutura.",
+    "cta_primary":   "Ver projetos",
+    "cta_secondary": "Entrar em contato",
+    "scroll": "Role",
+    "based":  "No Brasil · Trabalhando globalmente"
+  },
+  "about": {
+    "kicker": "01 — Sobre",
+    "title":  "Sobre mim",
+    "p1": "Sou desenvolvedor full-stack focado em entregar produtos limpos, manuteníveis e performáticos em produção. Atuo em toda a stack — do design da interface no Figma ao deploy da API.",
+    "p2": "Atualmente cursando especialização em Desenvolvimento Full Stack na PUC-RS, expandindo também para IA e automação digital. Tenho inglês avançado e estou pronto para colaborar remotamente com times internacionais.",
+    "p3": "Fora do editor, sou um aprendiz rápido que valoriza comunicação clara, autonomia e entrega. Trato cada projeto como uma parceria de longo prazo.",
+    "facts": [
+      { "k": "Localização",   "v": "Porto Alegre, Brasil"  },
+      { "k": "Idiomas",       "v": "Português · Inglês"    },
+      { "k": "Disponibilidade", "v": "Aberto a remoto"     },
+      { "k": "Foco",          "v": "Web · IA · Automação"  }
+    ]
+  },
+  "stack": {
+    "kicker":   "02 — Stack",
+    "title":    "Ferramentas do ofício",
+    "subtitle": "Tecnologias e habilidades que uso diariamente.",
+    "groups": {
+      "frontend": "Frontend",
+      "backend":  "Backend & Dados",
+      "design":   "Design & Plataformas",
+      "soft":     "Soft skills"
+    }
+  },
+  "projects": {
+    "kicker":   "03 — Trabalhos selecionados",
+    "title":    "Projetos recentes",
+    "subtitle": "Uma seleção de trabalhos do meu GitHub. Clique em qualquer card para ver o repositório.",
+    "view":     "Ver repo",
+    "live":     "Online"
+  },
+  "education": {
+    "kicker":          "04 — Formação",
+    "title":           "Trajetória",
+    "subtitle":        "Formação acadêmica e aprendizado contínuo.",
+    "status_progress": "Em andamento",
+    "status_done":     "Concluído",
+    "extra_title":     "Aprendizado contínuo",
+    "extra_body":      "Além da formação acadêmica, participo de diversos cursos especializados em desenvolvimento web, IA, design systems e arquitetura de software."
+  },
+  "contact": {
+    "kicker":   "05 — Conversar",
+    "title":    "Tem um projeto em mente?",
+    "subtitle": "Atualmente disponível para oportunidades remotas e freelance. Entre em contato pelo canal que preferir.",
+    "cta":      "Enviar mensagem",
+    "copy":     "Copiar email",
+    "copied":   "Copiado!",
+    "response": "Normalmente responde em até 24 horas"
+  },
+  "footer": {
+    "built": "Feito com Next.js · Design e desenvolvimento por Christian Fonseca",
+    "year":  "© 2026 Christian Fonseca. Todos os direitos reservados."
+  },
+  "easter": {
+    "title": "Você encontrou.",
+    "body":  "Obrigado por olhar com atenção. É esse mesmo cuidado que coloco em cada linha de código.",
+    "close": "Legal"
+  }
+}

@@ -1,0 +1,57 @@
+@import 'tailwindcss';
+
+@layer utilities {
+  .bg-bg { background-color: #0a0a0a; }
+  .bg-bg-elev { background-color: #111111; }
+  .bg-bg-elev-2 { background-color: #161616; }
+  .text-fg { color: #f5f5f5; }
+  .text-fg-muted { color: #a1a1a1; }
+  .text-fg-dim { color: #6b6b6b; }
+  .text-accent { color: #00ff88; }
+  .bg-accent { background-color: #00ff88; }
+  .border-accent { border-color: #00ff88; }
+  .border-bg { border-color: #0a0a0a; }
+  .font-sans { font-family: var(--font-geist), "Inter", -apple-system, system-ui, sans-serif; }
+  .font-mono { font-family: var(--font-geist-mono), "JetBrains Mono", ui-monospace, monospace; }
+  .font-display { font-family: var(--font-geist), "Inter", sans-serif; }
+  .from-bg-elev {
+    --tw-gradient-from: #111111 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(17 17 17 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from), var(--tw-gradient-to));
+  }
+  .from-bg-elev-2 {
+    --tw-gradient-from: #161616 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(22 22 22 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from), var(--tw-gradient-to));
+  }
+  .to-bg {
+    --tw-gradient-to: #0a0a0a var(--tw-gradient-to-position);
+  }
+}
+
+@keyframes pulse-status {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(0, 255, 136, 0.15); }
+  50% { box-shadow: 0 0 0 6px rgba(0, 255, 136, 0.05); }
+}
+
+@keyframes cursor-blink {
+  50% { opacity: 0; }
+}
+
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.7); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-dot-ring {
+  0%, 100% {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 0 0 0 #00ff88;
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 0 0 8px rgba(0, 255, 136, 0);
+  }
+}

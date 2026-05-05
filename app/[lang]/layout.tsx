@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { hasLocale } from './dictionaries'
 import { notFound } from 'next/navigation'
-import '@/app/globals.css'
+import '@/app/tailwind.css'
 
 const geist = Geist({
   subsets: ['latin'],
@@ -46,9 +46,9 @@ export default async function RootLayout({
   return (
     <html
       lang={lang}
-      className={`${geist.variable} ${geistMono.variable}`}
+      className={`${geist.variable} ${geistMono.variable} scroll-smooth`}
     >
-      <body className="bg-bg text-fg font-sans antialiased">
+      <body className="bg-bg text-fg font-sans antialiased overflow-x-hidden leading-normal font-features-['ss01','cv11']">
         {children}
       </body>
     </html>

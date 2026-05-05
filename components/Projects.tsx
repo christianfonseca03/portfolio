@@ -5,6 +5,8 @@ type Props = {
   t:    Dictionary['projects']
   lang: string
 }
+const revealClass =
+  'reveal opacity-0 translate-y-6 transition-[opacity,transform] duration-[800ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] [transition-delay:var(--delay,0s)] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none [&.in-view]:opacity-100 [&.in-view]:translate-y-0'
 
 const DiagonalSVG = () => (
   <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -19,16 +21,16 @@ const DiagonalSVG = () => (
 
 export default function Projects({ t, lang }: Props) {
   return (
-    <section id="projects" className="py-[var(--section-pad)] px-[var(--gutter)]">
+    <section id="projects" className="px-6 py-[clamp(112px,16vw,240px)] md:px-10 xl:px-16 2xl:px-20">
       <div className="max-w-[1240px] mx-auto">
 
         {/* Section head */}
-        <div className="mb-[clamp(48px,8vw,80px)] max-w-[720px] reveal">
+        <div className={`${revealClass} mb-[clamp(48px,8vw,80px)] max-w-[720px]`}>
           <span className="block font-mono text-xs tracking-[0.12em] uppercase mb-4 text-accent">
             {t.kicker}
           </span>
           <h2
-            className="font-display font-medium leading-[1] tracking-[-0.03em] text-balance"
+            className="font-display font-medium leading-none tracking-[-0.03em] text-balance"
             style={{ fontSize: 'clamp(36px, 6vw, 72px)' }}
           >
             {t.title}
@@ -49,23 +51,23 @@ export default function Projects({ t, lang }: Props) {
               href={`https://github.com/christianfonseca03`}
               target="_blank"
               rel="noopener noreferrer"
-              className="project-card reveal relative block bg-bg-elev border border-white/8 rounded-[14px] overflow-hidden transition-all duration-[400ms] hover:-translate-y-1 hover:border-white/[16%] [cubic-bezier(0.22,1,0.36,1)]"
+              className={`project-card group ${revealClass} relative block overflow-hidden rounded-[14px] border border-white/8 bg-bg-elev transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-white/16`}
               style={{ '--delay': `${i * 0.08}s` } as React.CSSProperties}
             >
               {/* Glow layer */}
-              <div className="project-glow" />
+              <div className="pointer-events-none absolute -inset-px z-1 rounded-[inherit] opacity-0 mix-blend-screen transition-opacity duration-400 group-hover:opacity-[0.18] [background:radial-gradient(600px_circle_at_var(--mx,50%)_var(--my,50%),#00ff88_0%,transparent_30%)]" />
 
               <div className="relative z-10 p-6 flex flex-col gap-[18px] h-full">
                 {/* Head: number + year */}
-                <div className="flex justify-between font-mono text-[11px] text-fg-dim uppercase tracking-[0.1em]">
+                <div className="flex justify-between font-mono text-[11px] text-fg-dim uppercase tracking-widest">
                   <span className="text-accent">0{i + 1}</span>
                   <span>{project.year}</span>
                 </div>
 
                 {/* Visual placeholder */}
-                <div className="relative aspect-video bg-bg-elev-2 border border-white/8 rounded-[8px] overflow-hidden flex items-center justify-center transition-transform duration-[600ms] group-hover:scale-[1.02]">
+                <div className="relative aspect-video bg-bg-elev-2 border border-white/8 rounded-[8px] overflow-hidden flex items-center justify-center transition-transform duration-600 group-hover:scale-[1.02]">
                   <DiagonalSVG />
-                  <span className="relative font-mono text-[11px] text-fg-dim tracking-[0.05em]">
+                  <span className="relative font-mono text-[11px] text-fg-dim tracking-wider">
                     [ project preview ]
                   </span>
                 </div>

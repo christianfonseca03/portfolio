@@ -25,7 +25,7 @@ export default async function Page({
       <RevealObserver />
       <MouseGlowHandler />
       <Header lang={lang} t={dict} />
-      <main>
+      <main className="flex flex-col gap-[clamp(28px,5vw,72px)]">
         <Hero t={dict.hero} />
         <About t={dict.about} />
         <Stack t={dict.stack} />

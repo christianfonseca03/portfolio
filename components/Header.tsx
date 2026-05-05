@@ -62,8 +62,10 @@ export default function Header({ lang, t }: Props) {
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 px-[var(--gutter)] py-4 transition-all duration-300 border-b border-transparent',
-          scrolled && 'header-scrolled',
+          'fixed inset-x-0 top-0 z-50 border-b px-6 py-4 transition-all duration-300 md:px-10 xl:px-16 2xl:px-20',
+          scrolled
+            ? 'border-white/8 bg-[rgba(10,10,10,0.72)] backdrop-blur-lg [backdrop-filter:saturate(1.4)]'
+            : 'border-transparent',
         )}
       >
         <div className="max-w-[1240px] mx-auto flex items-center justify-between gap-6">
@@ -128,7 +130,11 @@ export default function Header({ lang, t }: Props) {
               aria-label="Toggle menu"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-bg-elev border border-white/8 min-[880px]:hidden"
             >
-              <span className={cn('burger', menuOpen && 'open')} />
+              <span className="relative block h-4 w-4">
+                <span className={cn('absolute left-0 top-1/2 block h-[1.5px] w-4 rounded bg-fg transition-all', menuOpen ? 'rotate-45' : 'translate-y-[-5px]')} />
+                <span className={cn('absolute left-0 top-1/2 block h-[1.5px] w-4 rounded bg-fg transition-all', menuOpen ? 'opacity-0' : 'opacity-100')} />
+                <span className={cn('absolute left-0 top-1/2 block h-[1.5px] w-4 rounded bg-fg transition-all', menuOpen ? '-rotate-45' : 'translate-y-[5px]')} />
+              </span>
             </button>
           </div>
         </div>
@@ -137,9 +143,9 @@ export default function Header({ lang, t }: Props) {
       {/* Mobile menu overlay */}
       <div
         className={cn(
-          'mobile-menu fixed inset-x-0 top-[64px] bottom-0 z-40 px-[var(--gutter)] py-8',
+          'fixed inset-x-0 bottom-0 top-[64px] z-40 px-6 py-8 transition-transform duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] md:px-10 xl:px-16 2xl:px-20',
           'bg-[rgba(10,10,10,0.96)] backdrop-blur-xl',
-          menuOpen && 'open',
+          menuOpen ? 'translate-y-0' : 'translate-y-[-110%]',
         )}
       >
         <nav className="flex flex-col gap-1">

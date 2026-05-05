@@ -2,6 +2,8 @@ import { STACK_DATA } from '@/lib/data'
 import type { Dictionary } from '@/app/[lang]/dictionaries'
 
 type Props = { t: Dictionary['stack'] }
+const revealClass =
+  'reveal opacity-0 translate-y-6 transition-[opacity,transform] duration-[800ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] [transition-delay:var(--delay,0s)] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none [&.in-view]:opacity-100 [&.in-view]:translate-y-0'
 
 const groups = [
   { key: 'frontend' as const, num: '01' },
@@ -12,16 +14,16 @@ const groups = [
 
 export default function Stack({ t }: Props) {
   return (
-    <section id="stack" className="py-[var(--section-pad)] px-[var(--gutter)]">
+    <section id="stack" className="px-6 py-[clamp(112px,16vw,240px)] md:px-10 xl:px-16 2xl:px-20">
       <div className="max-w-[1240px] mx-auto">
 
         {/* Section head */}
-        <div className="mb-[clamp(48px,8vw,80px)] max-w-[720px] reveal">
+        <div className={`${revealClass} mb-[clamp(48px,8vw,80px)] max-w-[720px]`}>
           <span className="block font-mono text-xs tracking-[0.12em] uppercase mb-4 text-accent">
             {t.kicker}
           </span>
           <h2
-            className="font-display font-medium leading-[1] tracking-[-0.03em] text-balance"
+            className="font-display font-medium leading-none tracking-[-0.03em] text-balance"
             style={{ fontSize: 'clamp(36px, 6vw, 72px)' }}
           >
             {t.title}
@@ -36,7 +38,7 @@ export default function Stack({ t }: Props) {
 
         {/* Grid */}
         <div
-          className="reveal grid gap-8 min-[720px]:grid-cols-2 min-[720px]:gap-px min-[720px]:bg-white/8 min-[720px]:border min-[720px]:border-white/8 min-[720px]:rounded-[14px] min-[720px]:overflow-hidden min-[1100px]:grid-cols-4"
+          className={`${revealClass} grid gap-8 min-[720px]:grid-cols-2 min-[720px]:gap-px min-[720px]:overflow-hidden min-[720px]:rounded-[14px] min-[720px]:border min-[720px]:border-white/8 min-[720px]:bg-white/8 min-[1100px]:grid-cols-4`}
           style={{ '--delay': '0.1s' } as React.CSSProperties}
         >
           {groups.map(({ key, num }) => (

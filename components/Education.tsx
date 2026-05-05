@@ -5,19 +5,21 @@ type Props = {
   t:    Dictionary['education']
   lang: string
 }
+const revealClass =
+  'reveal opacity-0 translate-y-6 transition-[opacity,transform] duration-[800ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] [transition-delay:var(--delay,0s)] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none [&.in-view]:opacity-100 [&.in-view]:translate-y-0'
 
 export default function Education({ t, lang }: Props) {
   return (
-    <section id="education" className="py-[var(--section-pad)] px-[var(--gutter)]">
+    <section id="education" className="px-6 py-[clamp(112px,16vw,240px)] md:px-10 xl:px-16 2xl:px-20">
       <div className="max-w-[1240px] mx-auto">
 
         {/* Section head */}
-        <div className="mb-[clamp(48px,8vw,80px)] max-w-[720px] reveal">
+        <div className={`${revealClass} mb-[clamp(48px,8vw,80px)] max-w-[720px]`}>
           <span className="block font-mono text-xs tracking-[0.12em] uppercase mb-4 text-accent">
             {t.kicker}
           </span>
           <h2
-            className="font-display font-medium leading-[1] tracking-[-0.03em] text-balance"
+            className="font-display font-medium leading-none tracking-[-0.03em] text-balance"
             style={{ fontSize: 'clamp(36px, 6vw, 72px)' }}
           >
             {t.title}
@@ -32,11 +34,11 @@ export default function Education({ t, lang }: Props) {
 
         {/* Timeline */}
         <div
-          className="reveal relative pl-7"
+          className={`${revealClass} relative pl-7`}
           style={{ '--delay': '0.1s' } as React.CSSProperties}
         >
           {/* Vertical rail */}
-          <div className="absolute left-[5px] top-2 bottom-2 w-px bg-gradient-to-b from-white/[16%] to-transparent" />
+          <div className="absolute left-[5px] top-2 bottom-2 w-px bg-linear-to-b from-white/16 to-transparent" />
 
           {EDUCATION_DATA.map((item, i) => (
             <div
@@ -48,7 +50,7 @@ export default function Education({ t, lang }: Props) {
                 className={[
                   'absolute left-[-28px] top-[30px] w-[11px] h-[11px] rounded-full border-2 border-bg',
                   item.status === 'progress'
-                    ? 'bg-accent [animation:pulse-dot-ring_2s_ease-in-out_infinite]'
+                    ? 'bg-accent animate-[pulse-dot-ring_2s_ease-in-out_infinite]'
                     : 'bg-fg-dim shadow-[0_0_0_1px_rgba(255,255,255,0.16)]',
                 ].join(' ')}
               />
@@ -80,7 +82,7 @@ export default function Education({ t, lang }: Props) {
 
         {/* Continuous learning callout */}
         <div
-          className="reveal mt-12 p-7 bg-bg-elev border border-white/8 rounded-[14px]"
+          className={`${revealClass} mt-12 rounded-[14px] border border-white/8 bg-bg-elev p-7`}
           style={{ '--delay': '0.2s' } as React.CSSProperties}
         >
           <p className="font-mono text-sm uppercase tracking-[0.06em] text-fg-muted mb-2">

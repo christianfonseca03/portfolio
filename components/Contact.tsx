@@ -4,6 +4,8 @@ import { useState } from 'react'
 import type { Dictionary } from '@/app/[lang]/dictionaries'
 
 type Props = { t: Dictionary['contact'] }
+const revealClass =
+  'reveal opacity-0 translate-y-6 transition-[opacity,transform] duration-[800ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] [transition-delay:var(--delay,0s)] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none [&.in-view]:opacity-100 [&.in-view]:translate-y-0'
 
 const WhatsAppIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -76,10 +78,10 @@ export default function Contact({ t }: Props) {
   return (
     <section
       id="contact"
-      className="py-[var(--section-pad)] pb-[clamp(120px,16vw,200px)] px-[var(--gutter)]"
+      className="px-6 py-[clamp(112px,16vw,240px)] pb-[clamp(120px,16vw,200px)] md:px-10 xl:px-16 2xl:px-20"
     >
       <div className="max-w-[1240px] mx-auto">
-        <div className="reveal relative bg-gradient-to-b from-bg-elev to-bg border border-white/8 rounded-[clamp(20px,3vw,32px)] p-[clamp(40px,6vw,80px)] overflow-hidden">
+        <div className={`${revealClass} relative overflow-hidden rounded-[clamp(20px,3vw,32px)] border border-white/8 bg-linear-to-b from-bg-elev to-bg p-[clamp(40px,6vw,80px)]`}>
 
           {/* Accent radial */}
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,rgba(0,255,136,0.08),transparent_50%)]" />
@@ -90,7 +92,7 @@ export default function Contact({ t }: Props) {
               {t.kicker}
             </span>
             <h2
-              className="font-display font-medium leading-[1] tracking-[-0.03em] mt-4 text-balance"
+              className="mt-4 font-display font-medium leading-none tracking-[-0.03em] text-balance"
               style={{ fontSize: 'clamp(36px, 6vw, 64px)' }}
             >
               {t.title}
@@ -139,7 +141,7 @@ export default function Contact({ t }: Props) {
             </a>
             <button
               onClick={copyEmail}
-              className="inline-flex items-center gap-2.5 px-[22px] py-3.5 text-sm text-fg border border-white/[16%] rounded-full transition-all hover:bg-bg-elev hover:border-fg-muted"
+              className="inline-flex items-center gap-2.5 rounded-full border border-white/16 px-[22px] py-3.5 text-sm text-fg transition-all hover:border-fg-muted hover:bg-bg-elev"
             >
               {copied ? t.copied : t.copy}
             </button>
@@ -147,7 +149,7 @@ export default function Contact({ t }: Props) {
 
           {/* Response time */}
           <div className="relative mt-8 flex items-center gap-2.5 font-mono text-xs text-fg-dim">
-            <span className="w-2 h-2 rounded-full bg-accent [animation:pulse-status_2s_ease-in-out_infinite]" />
+            <span className="h-2 w-2 rounded-full bg-accent animate-[pulse-status_2s_ease-in-out_infinite]" />
             {t.response}
           </div>
 

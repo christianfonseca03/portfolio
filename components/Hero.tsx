@@ -37,15 +37,6 @@ export default function Hero({ t }: Props) {
 
         {/* Left column */}
         <div className="flex flex-col">
-          {/* Status pill */}
-          <div
-            className={`${revealClass} inline-flex w-fit items-center gap-2.5 rounded-full border border-white/8 bg-bg-elev px-3.5 py-2 font-mono text-xs text-fg-muted`}
-            style={{ '--delay': '0s' } as React.CSSProperties}
-          >
-            <span className="h-[7px] w-[7px] shrink-0 rounded-full bg-accent animate-[pulse-status_2s_ease-in-out_infinite]" />
-            {t.status}
-          </div>
-
           {/* Headline */}
           <h1
             className={`${revealClass} mt-7 font-display font-medium leading-[0.95] tracking-[-0.035em]`}

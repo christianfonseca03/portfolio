@@ -68,10 +68,5 @@
   "footer": {
     "built": "Built with Next.js · Designed and developed by Christian Fonseca",
     "year":  "© 2026 Christian Fonseca. All rights reserved."
-  },
-  "easter": {
-    "title": "You found it.",
-    "body":  "Thanks for looking closely. That's the kind of attention I bring to every line of code.",
-    "close": "Nice"
   }
 }

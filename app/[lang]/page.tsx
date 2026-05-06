@@ -33,7 +33,7 @@ export default async function Page({
         <Education t={dict.education} lang={lang} />
         <Contact t={dict.contact} />
       </main>
-      <Footer t={dict.footer} easterT={dict.easter} />
+      <Footer t={dict.footer}/>
     </>
   )
 }

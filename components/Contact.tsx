@@ -78,7 +78,7 @@ export default function Contact({ t }: Props) {
   return (
     <section
       id="contact"
-      className="px-6 py-[clamp(112px,16vw,240px)] pb-[clamp(120px,16vw,200px)] md:px-10 xl:px-16 2xl:px-20"
+      className="px-6 pt-[clamp(72px,10vw,140px)] pb-[clamp(120px,16vw,200px)] md:px-10 xl:px-16 2xl:px-20"
     >
       <div className="max-w-[1240px] mx-auto">
         <div className={`${revealClass} relative overflow-hidden rounded-[clamp(20px,3vw,32px)] border border-white/8 bg-linear-to-b from-bg-elev to-bg p-[clamp(40px,6vw,80px)]`}>

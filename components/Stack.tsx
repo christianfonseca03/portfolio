@@ -14,7 +14,7 @@ const groups = [
 
 export default function Stack({ t }: Props) {
   return (
-    <section id="stack" className="px-6 py-[clamp(112px,16vw,240px)] md:px-10 xl:px-16 2xl:px-20">
+    <section id="stack" className="px-6 py-[clamp(72px,10vw,140px)] md:px-10 xl:px-16 2xl:px-20">
       <div className="max-w-[1240px] mx-auto">
 
         {/* Section head */}

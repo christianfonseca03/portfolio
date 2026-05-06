@@ -46,7 +46,7 @@ export default function Hero({ t }: Props) {
             } as React.CSSProperties}
           >
             <span>{t.title_pre}</span>{' '}
-            <span className="italic font-normal text-fg-muted">{t.title_main}</span>
+            <span className="italic font-normal text-accent">{t.title_main}</span>
             <br />
             <span>{t.title_post}</span>
           </h1>

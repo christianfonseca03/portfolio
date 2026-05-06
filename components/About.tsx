@@ -1,15 +1,9 @@
 import type { Dictionary } from '@/app/[lang]/dictionaries'
+import Image from 'next/image'
 
 type Props = { t: Dictionary['about'] }
 const revealClass =
   'reveal opacity-0 translate-y-6 transition-[opacity,transform] duration-[800ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] [transition-delay:var(--delay,0s)] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none [&.in-view]:opacity-100 [&.in-view]:translate-y-0'
-
-const PersonIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <circle cx="16" cy="11" r="5" stroke="currentColor" strokeWidth="1.5" />
-    <path d="M4 28c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-  </svg>
-)
 
 export default function About({ t }: Props) {
   return (
@@ -83,13 +77,14 @@ export default function About({ t }: Props) {
                 <rect width="100%" height="100%" fill="url(#portrait-diag)" />
               </svg>
 
-              {/* Placeholder content */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-linear-to-br from-bg-elev-2 to-bg">
-                <span className="w-[72px] h-[72px] rounded-full border border-accent flex items-center justify-center text-accent">
-                  <PersonIcon />
-                </span>
-                <span className="font-mono text-xs text-fg-muted tracking-[0.08em]">[ photo ]</span>
-              </div>
+              <Image
+                src="/ChristianFonseca.png"
+                alt="Foto de Christian Fonseca"
+                fill
+                priority
+                className="object-cover object-center"
+                sizes="(max-width: 879px) 100vw, 40vw"
+              />
 
               {/* Name tag */}
               <div className="absolute left-3.5 bottom-3.5 inline-flex items-center gap-2 px-3 py-[7px] bg-[rgba(10,10,10,0.7)] backdrop-blur-[10px] border border-white/16 rounded-full font-mono text-[11px] tracking-[0.04em]">

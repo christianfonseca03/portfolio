@@ -128,12 +128,29 @@ export default function Header({ lang, t }: Props) {
             <button
               onClick={() => setMenuOpen((o) => !o)}
               aria-label="Toggle menu"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-bg-elev border border-white/8 min-[880px]:hidden"
+              aria-expanded={menuOpen}
+              aria-controls="mobile-nav"
+              className="h-10 w-10 min-[880px]:hidden rounded-full border border-white/8 bg-bg-elev flex items-center justify-center"
             >
               <span className="relative block h-4 w-4">
-                <span className={cn('absolute left-0 top-1/2 block h-[1.5px] w-4 rounded bg-fg transition-all', menuOpen ? 'rotate-45' : 'translate-y-[-5px]')} />
-                <span className={cn('absolute left-0 top-1/2 block h-[1.5px] w-4 rounded bg-fg transition-all', menuOpen ? 'opacity-0' : 'opacity-100')} />
-                <span className={cn('absolute left-0 top-1/2 block h-[1.5px] w-4 rounded bg-fg transition-all', menuOpen ? '-rotate-45' : 'translate-y-[5px]')} />
+                <span
+                  className={cn(
+                    'absolute left-0 top-1/2 block h-0.5 w-4 rounded bg-white transition-all duration-300',
+                    menuOpen ? 'rotate-45' : '-translate-y-1.5',
+                  )}
+                />
+                <span
+                  className={cn(
+                    'absolute left-0 top-1/2 block h-0.5 w-4 rounded bg-white transition-all duration-300',
+                    menuOpen ? 'opacity-0' : 'opacity-100',
+                  )}
+                />
+                <span
+                  className={cn(
+                    'absolute left-0 top-1/2 block h-0.5 w-4 rounded bg-white transition-all duration-300',
+                    menuOpen ? '-rotate-45' : 'translate-y-1.5',
+                  )}
+                />
               </span>
             </button>
           </div>
@@ -142,6 +159,7 @@ export default function Header({ lang, t }: Props) {
 
       {/* Mobile menu overlay */}
       <div
+        id="mobile-nav"
         className={cn(
           'fixed inset-x-0 bottom-0 top-[64px] z-40 px-6 py-8 transition-transform duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] md:px-10 xl:px-16 2xl:px-20',
           'bg-[rgba(10,10,10,0.96)] backdrop-blur-xl',

@@ -27,8 +27,8 @@ export const PROJECT_DATA: Project[] = [
   },
   {
     name: "Skyline HomeTech",
-    desc_en: "Real home technology service platform with active clients and recurring subscribers, built to manage memberships, services, payments and customer access.",
-    desc_pt: "Plataforma real de serviços de tecnologia residencial, com clientes ativos e assinantes recorrentes, criada para gerenciar planos, serviços, pagamentos e acesso dos clientes.",
+    desc_en: "Home technology service platform with active clients and recurring subscribers, built to manage memberships, services, payments and customer access.",
+    desc_pt: "Plataforma de serviços de tecnologia residencial, com clientes ativos e assinantes recorrentes, criada para gerenciar planos, serviços, pagamentos e acesso dos clientes.",
     tags: ["Next.js", "Node.js", "PostgreSQL", "Stripe", "Clerk", "TypeScript", "Tailwind CSS"],
     year: "2025",
     liveUrl: "https://www.skylinehometech.com/",
@@ -37,8 +37,8 @@ export const PROJECT_DATA: Project[] = [
   },
   {
     name: "Cabana do Pórtico",
-    desc_en: "Landing page for a real Airbnb cabin in Gramado-RS, designed to attract guests and generate direct booking requests through the website.",
-    desc_pt: "Landing page para uma cabana real de Airbnb em Gramado-RS, criada para atrair hóspedes e gerar pedidos reais de reserva pelo site.",
+    desc_en: "Landing page for an Airbnb cabin in Gramado-RS, designed to attract guests and generate direct booking requests through the website.",
+    desc_pt: "Landing page para uma cabana de Airbnb em Gramado-RS, criada para atrair hóspedes e gerar pedidos de reserva pelo site.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     year: "2025",
     liveUrl: "https://cabana-portico.vercel.app/",

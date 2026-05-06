@@ -113,14 +113,14 @@ export default function Contact({ t }: Props) {
                 href={href}
                 target={id !== 'email' ? '_blank' : undefined}
                 rel={id !== 'email' ? 'noopener noreferrer' : undefined}
-                className="group flex items-center gap-4 px-6 py-5 bg-bg transition-all duration-200 hover:bg-bg-elev hover:pl-7"
+                className="group flex items-center gap-4 px-4 py-5 bg-bg transition-all duration-200 hover:bg-bg-elev md:px-6 md:hover:pl-7"
               >
                 <span className="w-10 h-10 flex items-center justify-center rounded-[8px] bg-bg-elev-2 border border-white/8 text-fg shrink-0 transition-all group-hover:text-accent group-hover:border-accent">
                   <Icon />
                 </span>
                 <span className="flex flex-col gap-0.5 flex-1 min-w-0">
                   <span className="font-mono text-[13px] text-fg-dim uppercase tracking-[0.06em]">{label}</span>
-                  <span className="text-[15px] text-fg truncate">{value}</span>
+                  <span className="text-[15px] text-fg break-all">{value}</span>
                 </span>
                 <span className="text-fg-dim text-base transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-accent">
                   ↗

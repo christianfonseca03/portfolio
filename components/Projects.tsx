@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { PROJECT_DATA } from '@/lib/data'
 import type { Dictionary } from '@/app/[lang]/dictionaries'
 
@@ -20,6 +21,26 @@ const DiagonalSVG = () => (
 )
 
 export default function Projects({ t, lang }: Props) {
+  const getPreviewMode = (project: (typeof PROJECT_DATA)[number]) =>
+    project.previewMode ?? (project.liveUrl ? 'image' : 'under-development')
+
+  const getUnderDevelopmentText = () =>
+    lang === 'pt' ? 'under development' : 'under development'
+
+  const getPreviewImageUrl = (project: (typeof PROJECT_DATA)[number]) => {
+    if (project.previewImageUrl) return project.previewImageUrl
+    if (!project.liveUrl) return ''
+    return `https://mini.s-shot.ru/1440x900/JPEG/1440/Z100/?${project.liveUrl}`
+  }
+
+  const getDomainLabel = (url: string) => {
+    try {
+      return new URL(url).hostname.replace(/^www\./, '')
+    } catch {
+      return url
+    }
+  }
+
   return (
     <section id="projects" className="px-6 py-[clamp(72px,10vw,140px)] md:px-10 xl:px-16 2xl:px-20">
       <div className="max-w-[1240px] mx-auto">
@@ -45,17 +66,29 @@ export default function Projects({ t, lang }: Props) {
 
         {/* Cards grid */}
         <div className="grid gap-6 min-[720px]:grid-cols-2">
-          {PROJECT_DATA.map((project, i) => (
+          {PROJECT_DATA.map((project, i) => {
+            const previewMode = getPreviewMode(project)
+            const isUnderDevelopment = previewMode === 'under-development'
+            const isClickable = Boolean(project.liveUrl) && !isUnderDevelopment
+
+            return (
             <a
               key={project.name}
-              href={`https://github.com/christianfonseca03`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`project-card group ${revealClass} relative block overflow-hidden rounded-[14px] border border-white/8 bg-bg-elev transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-white/16`}
+              href={isClickable ? project.liveUrl : undefined}
+              target={isClickable ? '_blank' : undefined}
+              rel={isClickable ? 'noopener noreferrer' : undefined}
+              aria-disabled={!isClickable}
+              className={`project-card group ${revealClass} relative block overflow-hidden rounded-[14px] border transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                isUnderDevelopment
+                  ? 'cursor-default border-white/8 bg-bg-elev'
+                  : 'border-white/8 bg-bg-elev hover:-translate-y-1 hover:border-white/16'
+              }`}
               style={{ '--delay': `${i * 0.08}s` } as React.CSSProperties}
             >
               {/* Glow layer */}
-              <div className="pointer-events-none absolute -inset-px z-1 rounded-[inherit] opacity-0 mix-blend-screen transition-opacity duration-400 group-hover:opacity-[0.18] [background:radial-gradient(600px_circle_at_var(--mx,50%)_var(--my,50%),#00ff88_0%,transparent_30%)]" />
+              {!isUnderDevelopment && (
+                <div className="pointer-events-none absolute -inset-px z-1 rounded-[inherit] opacity-0 mix-blend-screen transition-opacity duration-400 group-hover:opacity-[0.18] [background:radial-gradient(600px_circle_at_var(--mx,50%)_var(--my,50%),#00ff88_0%,transparent_30%)]" />
+              )}
 
               <div className="relative z-10 p-6 flex flex-col gap-[18px] h-full">
                 {/* Head: number + year */}
@@ -64,12 +97,36 @@ export default function Projects({ t, lang }: Props) {
                   <span>{project.year}</span>
                 </div>
 
-                {/* Visual placeholder */}
-                <div className="relative aspect-video bg-bg-elev-2 border border-white/8 rounded-[8px] overflow-hidden flex items-center justify-center transition-transform duration-600 group-hover:scale-[1.02]">
-                  <DiagonalSVG />
-                  <span className="relative font-mono text-[11px] text-fg-dim tracking-wider">
-                    [ project preview ]
-                  </span>
+                {/* Live preview */}
+                <div className={`relative aspect-video rounded-[8px] overflow-hidden flex items-center justify-center transition-transform duration-600 ${
+                  isUnderDevelopment
+                    ? 'bg-bg-elev-2 border border-white/8'
+                    : 'bg-bg-elev-2 border border-white/8 group-hover:scale-[1.02]'
+                }`}>
+                  {isUnderDevelopment ? (
+                    <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-fg-muted">
+                      {getUnderDevelopmentText()}
+                    </span>
+                  ) : (
+                    <>
+                      <DiagonalSVG />
+                      <Image
+                        src={getPreviewImageUrl(project)}
+                        alt={`${project.name} live preview`}
+                        fill
+                        unoptimized
+                        sizes="(max-width: 719px) 100vw, 50vw"
+                        className="absolute inset-0 object-cover"
+                      />
+
+                      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.10)_40%,rgba(0,0,0,0)_70%)]" />
+                      {project.liveUrl && (
+                        <span className="absolute left-3 top-3 z-10 rounded-full border border-white/20 bg-black/35 px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-fg-dim">
+                          {getDomainLabel(project.liveUrl)}
+                        </span>
+                      )}
+                    </>
+                  )}
                 </div>
 
                 {/* Body */}
@@ -95,12 +152,13 @@ export default function Projects({ t, lang }: Props) {
                 {/* Footer CTA */}
                 <div className="mt-auto pt-3 border-t border-white/8">
                   <span className="inline-flex items-center gap-2 font-mono text-xs text-fg-muted tracking-[0.04em] transition-all group-hover:text-accent group-hover:gap-3">
-                    {t.view} →
+                    {isUnderDevelopment ? getUnderDevelopmentText() : `${t.view} →`}
                   </span>
                 </div>
               </div>
             </a>
-          ))}
+            )
+          })}
         </div>
 
       </div>

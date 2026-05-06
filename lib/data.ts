@@ -11,36 +11,49 @@ export type Project = {
   desc_pt: string
   tags:    string[]
   year:    string
+  liveUrl?: string
+  previewMode?: "iframe" | "image" | "under-development"
+  previewImageUrl?: string
 }
 
 export const PROJECT_DATA: Project[] = [
   {
-    name:    "Project Alpha",
-    desc_en: "A real-time collaboration tool with shared cursors, presence and conflict-free editing.",
-    desc_pt: "Ferramenta de colaboração em tempo real com cursores compartilhados, presença e edição sem conflitos.",
-    tags:    ["Next.js", "TypeScript", "WebSockets"],
-    year:    "2025",
+    name: "PostGraduation TCC",
+    desc_en: "Ongoing postgraduate final project focused on AI applications, currently under development.",
+    desc_pt: "Projeto final de pós-graduação focado em aplicações de IA, atualmente em desenvolvimento.",
+    tags: ["AI"],
+    year: "2026",
+    previewMode: "under-development",
   },
   {
-    name:    "Project Beta",
-    desc_en: "E-commerce storefront with headless CMS, custom checkout flow and Stripe integration.",
-    desc_pt: "E-commerce com CMS headless, fluxo de checkout customizado e integração com Stripe.",
-    tags:    ["React", "Node.js", "PostgreSQL"],
-    year:    "2025",
+    name: "Skyline HomeTech",
+    desc_en: "Real home technology service platform with active clients and recurring subscribers, built to manage memberships, services, payments and customer access.",
+    desc_pt: "Plataforma real de serviços de tecnologia residencial, com clientes ativos e assinantes recorrentes, criada para gerenciar planos, serviços, pagamentos e acesso dos clientes.",
+    tags: ["Next.js", "Node.js", "PostgreSQL", "Stripe", "Clerk", "TypeScript", "Tailwind CSS"],
+    year: "2025",
+    liveUrl: "https://www.skylinehometech.com/",
+    previewMode: "image",
+    previewImageUrl: "https://mini.s-shot.ru/1440x900/JPEG/1440/Z100/?https://www.skylinehometech.com/",
   },
   {
-    name:    "Project Gamma",
-    desc_en: "AI-powered dashboard for content moderation with classification pipelines and analytics.",
-    desc_pt: "Dashboard com IA para moderação de conteúdo, com pipelines de classificação e analytics.",
-    tags:    ["Python", "Next.js", "Tailwind"],
-    year:    "2024",
+    name: "Cabana do Pórtico",
+    desc_en: "Landing page for a real Airbnb cabin in Gramado-RS, designed to attract guests and generate direct booking requests through the website.",
+    desc_pt: "Landing page para uma cabana real de Airbnb em Gramado-RS, criada para atrair hóspedes e gerar pedidos reais de reserva pelo site.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    year: "2025",
+    liveUrl: "https://cabana-portico.vercel.app/",
+    previewMode: "image",
+    previewImageUrl: "https://mini.s-shot.ru/1440x900/JPEG/1440/Z100/?https://cabana-portico.vercel.app/",
   },
   {
-    name:    "Project Delta",
-    desc_en: "Salesforce automation suite — custom Lightning components and Apex flow orchestration.",
-    desc_pt: "Suite de automação Salesforce — componentes Lightning customizados e orquestração Apex.",
-    tags:    ["Salesforce", "TypeScript", "C#"],
-    year:    "2024",
+    name: "Wheller Interiores",
+    desc_en: "Old and discontinued project for a former interior design company, built in 2023 before AI tools became part of the development workflow.",
+    desc_pt: "Projeto antigo e descontinuado para uma antiga empresa de design de interiores, feito em 2023 antes das ferramentas de IA fazerem parte do fluxo de desenvolvimento.",
+    tags: ["React.js", "TypeScript", "Tailwind CSS"],
+    year: "2023",
+    liveUrl: "https://wheller-interiores.vercel.app/",
+    previewMode: "image",
+    previewImageUrl: "https://mini.s-shot.ru/1440x900/JPEG/1440/Z100/?https://wheller-interiores.vercel.app/",
   },
 ]
 

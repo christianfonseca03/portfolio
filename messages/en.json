@@ -43,8 +43,8 @@
   "projects": {
     "kicker":   "03 — Selected work",
     "title":    "Recent projects",
-    "subtitle": "A selection of work pulled from my GitHub. Click any card to view the repository.",
-    "view":     "View repo",
+    "subtitle": "A selection of my work. Click any card to visit the website.",
+    "view":     "View site",
     "live":     "Live"
   },
   "education": {

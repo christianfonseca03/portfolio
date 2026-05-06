@@ -43,8 +43,8 @@
   "projects": {
     "kicker":   "03 — Trabalhos selecionados",
     "title":    "Projetos recentes",
-    "subtitle": "Uma seleção de trabalhos do meu GitHub. Clique em qualquer card para ver o repositório.",
-    "view":     "Ver repo",
+    "subtitle": "Uma seleção dos meus trabalhos. Clique em qualquer card para visitar o site.",
+    "view":     "Ver site",
     "live":     "Online"
   },
   "education": {

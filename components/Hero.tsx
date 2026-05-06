@@ -31,7 +31,7 @@ export default function Hero({ t }: Props) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen overflow-hidden px-6 pt-[clamp(120px,18vh,180px)] pb-[clamp(80px,12vh,120px)] md:px-10 xl:px-16 2xl:px-20"
+      className="relative min-h-screen overflow-hidden px-6 pt-[88px] pb-[clamp(80px,12vh,120px)] md:px-10 md:pt-[clamp(120px,18vh,180px)] xl:px-16 2xl:px-20"
     >
       <div className="mx-auto grid w-full max-w-[1240px] items-center gap-12 min-[960px]:grid-cols-[1.1fr_0.9fr] min-[960px]:gap-16">
 

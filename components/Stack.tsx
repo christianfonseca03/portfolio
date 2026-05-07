@@ -1,7 +1,10 @@
-import { STACK_DATA } from '@/lib/data'
+import { STACK_DATA, STACK_SOFT_PT } from '@/lib/data'
 import type { Dictionary } from '@/app/[lang]/dictionaries'
 
-type Props = { t: Dictionary['stack'] }
+type Props = {
+  t: Dictionary['stack']
+  lang: string
+}
 const revealClass =
   'reveal opacity-0 translate-y-6 transition-[opacity,transform] duration-[800ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] [transition-delay:var(--delay,0s)] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none [&.in-view]:opacity-100 [&.in-view]:translate-y-0'
 
@@ -12,7 +15,10 @@ const groups = [
   { key: 'soft'     as const, num: '04' },
 ]
 
-export default function Stack({ t }: Props) {
+export default function Stack({ t, lang }: Props) {
+  const getItems = (key: (typeof groups)[number]['key']) =>
+    key === 'soft' && lang === 'pt' ? STACK_SOFT_PT : STACK_DATA[key]
+
   return (
     <section id="stack" className="px-6 py-[clamp(72px,10vw,140px)] md:px-10 xl:px-16 2xl:px-20">
       <div className="max-w-[1240px] mx-auto">
@@ -51,7 +57,7 @@ export default function Stack({ t }: Props) {
                 <span className="text-sm font-medium tracking-tight">{t.groups[key]}</span>
               </div>
               <ul className="flex flex-col gap-2.5">
-                {STACK_DATA[key].map((item) => (
+                {getItems(key).map((item) => (
                   <li
                     key={item}
                     className="flex items-center gap-2.5 text-sm text-fg-muted transition-all hover:text-fg hover:translate-x-1"

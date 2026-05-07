@@ -57,13 +57,13 @@
     "extra_body":      "Além da formação acadêmica, participo de diversos cursos especializados em desenvolvimento web, IA, design systems e arquitetura de software."
   },
   "contact": {
-    "kicker":   "05 — Conversar",
+    "kicker":   "05 — Contato",
     "title":    "Tem um projeto em mente?",
     "subtitle": "Atualmente disponível para oportunidades remotas e freelance. Entre em contato pelo canal que preferir.",
     "cta":      "Enviar mensagem",
     "copy":     "Copiar email",
     "copied":   "Copiado!",
-    "response": "Normalmente responde em até 24 horas"
+    "response": "Normalmente responde em até 8 horas"
   },
   "footer": {
     "built": "Feito com Next.js · Design e desenvolvimento por Christian Fonseca",

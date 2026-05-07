@@ -5,8 +5,19 @@ export const STACK_DATA = {
   soft:     ["Advanced English", "Teamwork", "Problem-Solving", "Communication", "Adaptability", "Fast learning", "Customer Service"],
 } as const
 
+export const STACK_SOFT_PT = [
+  "Inglês avançado",
+  "Trabalho em equipe",
+  "Resolução de problemas",
+  "Comunicação",
+  "Adaptabilidade",
+  "Aprendizado rápido",
+  "Atendimento ao cliente",
+] as const
+
 export type Project = {
   name:    string
+  name_pt?: string
   desc_en: string
   desc_pt: string
   tags:    string[]
@@ -19,6 +30,7 @@ export type Project = {
 export const PROJECT_DATA: Project[] = [
   {
     name: "PostGraduation TCC",
+    name_pt: "TCC da pós-graduação",
     desc_en: "Ongoing postgraduate final project focused on AI applications, currently under development.",
     desc_pt: "Projeto final de pós-graduação focado em aplicações de IA, atualmente em desenvolvimento.",
     tags: ["AI"],

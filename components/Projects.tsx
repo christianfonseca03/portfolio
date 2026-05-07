@@ -25,7 +25,10 @@ export default function Projects({ t, lang }: Props) {
     project.previewMode ?? (project.liveUrl ? 'image' : 'under-development')
 
   const getUnderDevelopmentText = () =>
-    lang === 'pt' ? 'under development' : 'under development'
+    lang === 'pt' ? 'Em desenvolvimento' : 'Under development'
+
+  const getProjectName = (project: (typeof PROJECT_DATA)[number]) =>
+    lang === 'pt' && project.name_pt ? project.name_pt : project.name
 
   const getPreviewImageUrl = (project: (typeof PROJECT_DATA)[number]) => {
     if (project.previewImageUrl) return project.previewImageUrl
@@ -112,7 +115,7 @@ export default function Projects({ t, lang }: Props) {
                       <DiagonalSVG />
                       <Image
                         src={getPreviewImageUrl(project)}
-                        alt={`${project.name} live preview`}
+                        alt={`${getProjectName(project)} live preview`}
                         fill
                         unoptimized
                         sizes="(max-width: 719px) 100vw, 50vw"
@@ -132,7 +135,7 @@ export default function Projects({ t, lang }: Props) {
                 {/* Body */}
                 <div className="flex flex-col gap-2.5 flex-1">
                   <h3 className="font-display text-[22px] font-medium tracking-[-0.02em] transition-colors group-hover:text-accent">
-                    {project.name}
+                    {getProjectName(project)}
                   </h3>
                   <p className="text-sm text-fg-muted leading-relaxed text-pretty">
                     {lang === 'pt' ? project.desc_pt : project.desc_en}

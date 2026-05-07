@@ -28,7 +28,7 @@ export default async function Page({
       <main className="flex flex-col gap-[clamp(14px,2.8vw,32px)]">
         <Hero t={dict.hero} />
         <About t={dict.about} />
-        <Stack t={dict.stack} />
+        <Stack t={dict.stack} lang={lang} />
         <Projects t={dict.projects} lang={lang} />
         <Education t={dict.education} lang={lang} />
         <Contact t={dict.contact} />

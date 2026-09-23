@@ -36,14 +36,6 @@ export default function Projects({ t, lang }: Props) {
     return `https://mini.s-shot.ru/1440x900/JPEG/1440/Z100/?${project.liveUrl}`
   }
 
-  const getDomainLabel = (url: string) => {
-    try {
-      return new URL(url).hostname.replace(/^www\./, '')
-    } catch {
-      return url
-    }
-  }
-
   return (
     <section id="projects" className="px-6 py-[clamp(72px,10vw,140px)] md:px-10 xl:px-16 2xl:px-20">
       <div className="max-w-[1240px] mx-auto">
@@ -123,11 +115,6 @@ export default function Projects({ t, lang }: Props) {
                       />
 
                       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.10)_40%,rgba(0,0,0,0)_70%)]" />
-                      {project.liveUrl && (
-                        <span className="absolute left-3 top-3 z-10 rounded-full border border-white/20 bg-black/35 px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-fg-dim">
-                          {getDomainLabel(project.liveUrl)}
-                        </span>
-                      )}
                     </>
                   )}
                 </div>

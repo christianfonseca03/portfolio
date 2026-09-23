@@ -40,6 +40,16 @@ export const PROJECT_DATA: Project[] = [
     previewImageUrl: "/previews/keshai.jpg",
   },
   {
+    name: "RiftRanking",
+    desc_en: "Brazilian Riftbound ranking, updated daily with results from the stores that run official tournaments across the country — players, events and standings in one place.",
+    desc_pt: "Ranking brasileiro de Riftbound, atualizado diariamente com os resultados das lojas que realizam torneios oficiais no país — jogadores, eventos e classificação em um só lugar.",
+    tags: ["Next.js", "React.js", "TypeScript", "Tailwind CSS"],
+    year: "2026",
+    liveUrl: "https://rift-ranking.vercel.app/",
+    previewMode: "image",
+    previewImageUrl: "/previews/rift-ranking.jpg",
+  },
+  {
     name: "Skyline HomeTech",
     desc_en: "Home technology service platform with active clients and recurring subscribers, built to manage memberships, services, payments and customer access.",
     desc_pt: "Plataforma de serviços de tecnologia residencial, com clientes ativos e assinantes recorrentes, criada para gerenciar planos, serviços, pagamentos e acesso dos clientes.",

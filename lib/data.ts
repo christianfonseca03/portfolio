@@ -29,13 +29,15 @@ export type Project = {
 
 export const PROJECT_DATA: Project[] = [
   {
-    name: "PostGraduation TCC",
-    name_pt: "TCC da pós-graduação",
-    desc_en: "Ongoing postgraduate final project focused on AI applications, currently under development.",
-    desc_pt: "Projeto final de pós-graduação focado em aplicações de IA, atualmente em desenvolvimento.",
-    tags: ["AI"],
+    name: "KeshAI — Postgraduate Final Project",
+    name_pt: "KeshAI — TCC da pós-graduação",
+    desc_en: "Postgraduate final project: a platform that brings several AI models together in one place, with saved chat history and real-time usage tracking, paying only for what you use.",
+    desc_pt: "Projeto final da pós-graduação: uma plataforma que reúne vários modelos de IA em um só lugar, com histórico de conversas salvo e acompanhamento de consumo em tempo real, pagando apenas pelo que usar.",
+    tags: ["AI", "Next.js", "TypeScript", "Tailwind CSS"],
     year: "2026",
-    previewMode: "under-development",
+    liveUrl: "https://keshai-one.vercel.app/",
+    previewMode: "image",
+    previewImageUrl: "/previews/keshai.jpg",
   },
   {
     name: "Skyline HomeTech",
@@ -45,7 +47,7 @@ export const PROJECT_DATA: Project[] = [
     year: "2025",
     liveUrl: "https://www.skylinehometech.com/",
     previewMode: "image",
-    previewImageUrl: "https://mini.s-shot.ru/1440x900/JPEG/1440/Z100/?https://www.skylinehometech.com/",
+    previewImageUrl: "/previews/skyline-hometech.jpg",
   },
   {
     name: "Cabana do Pórtico",
@@ -55,7 +57,7 @@ export const PROJECT_DATA: Project[] = [
     year: "2025",
     liveUrl: "https://cabana-portico.vercel.app/",
     previewMode: "image",
-    previewImageUrl: "https://mini.s-shot.ru/1440x900/JPEG/1440/Z100/?https://cabana-portico.vercel.app/",
+    previewImageUrl: "/previews/cabana-portico.jpg",
   },
   {
     name: "Wheller Interiores",
@@ -65,7 +67,7 @@ export const PROJECT_DATA: Project[] = [
     year: "2023",
     liveUrl: "https://wheller-interiores.vercel.app/",
     previewMode: "image",
-    previewImageUrl: "https://mini.s-shot.ru/1440x900/JPEG/1440/Z100/?https://wheller-interiores.vercel.app/",
+    previewImageUrl: "/previews/wheller-interiores.jpg",
   },
 ]
 

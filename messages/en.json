@@ -62,8 +62,7 @@
     "subtitle": "I'm currently available for remote opportunities and freelance work. Reach out through any channel below.",
     "cta":      "Send a message",
     "copy":     "Copy email",
-    "copied":   "Copied!",
-    "response": "Usually responds within 8 hours"
+    "copied":   "Copied!"
   },
   "footer": {
     "built": "Built with Next.js · Designed and developed by Christian Fonseca",

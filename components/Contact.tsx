@@ -147,12 +147,6 @@ export default function Contact({ t }: Props) {
             </button>
           </div>
 
-          {/* Response time */}
-          <div className="relative mt-8 flex items-center gap-2.5 font-mono text-xs text-fg-dim">
-            <span className="h-2 w-2 rounded-full bg-accent animate-[pulse-status_2s_ease-in-out_infinite]" />
-            {t.response}
-          </div>
-
         </div>
       </div>
     </section>

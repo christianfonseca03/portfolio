@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react'
 import Image from 'next/image'
 import type { Copy } from '@/lib/i18n'
 import { clamp } from '@/lib/utils'
+import portrait from '@/public/ChristianFonseca.jpg'
 
 const COLS = 10
 const NCELL = COLS * 12
@@ -56,8 +57,8 @@ export default function Scanner({ c, edition, reduce }: Props) {
     if (reduce) return
     let s = 0
     const id = setInterval(() => {
-      // Desacelera perto de 80%
-      s += s > 96 && s < 102 ? 0.35 : 2
+      // Desacelera perto de 80% — ~33 ticks de 30ms ≈ 1s no total
+      s += s > 96 && s < 102 ? 0.75 : 4.5
       if (s >= NCELL) {
         s = NCELL
         clearInterval(id)
@@ -89,10 +90,11 @@ export default function Scanner({ c, edition, reduce }: Props) {
     >
       <div className="absolute inset-0 grayscale contrast-125 brightness-105">
         <Image
-          src="/ChristianFonseca.png"
+          src={portrait}
           alt="Christian Fonseca"
           fill
           preload
+          placeholder="blur"
           sizes="(max-width: 767px) 100vw, 560px"
           className="object-cover"
         />

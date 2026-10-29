@@ -97,6 +97,8 @@ export default function Scanner({ c, edition, reduce }: Props) {
           className="object-cover"
         />
       </div>
+      {/* Tinge a foto P&B com o tom do fundo: brancos viram bege, pretos se mantêm */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-bg mix-blend-multiply" />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-halftone opacity-[0.18]" />
 
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 grid grid-cols-10 grid-rows-12">

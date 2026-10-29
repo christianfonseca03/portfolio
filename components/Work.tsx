@@ -7,6 +7,8 @@ import { PROJECTS } from '@/lib/data'
 import { cn, pad, snapIndex } from '@/lib/utils'
 import { RevealTitle, SectionLabel } from './SectionHead'
 
+const TAG_PREVIEW = 3
+
 type Props = { c: Copy; lang: Locale; revealed: boolean; onOpen: (i: number) => void }
 
 export default function Work({ c, lang, revealed, onOpen }: Props) {
@@ -45,12 +47,25 @@ export default function Work({ c, lang, revealed, onOpen }: Props) {
               />
               <span className="absolute top-2 left-2 bg-ink px-[7px] py-[3px] text-[10.5px] tracking-[0.08em] text-bg">{p.year}</span>
             </div>
-            <div className="flex w-full items-end justify-between gap-2.5 p-3">
-              <div className="flex min-w-0 flex-col gap-1">
-                <span className="text-sm font-semibold tracking-[0.04em] wrap-anywhere">{p.code}</span>
-                <span className="text-[11px] tracking-[0.08em] text-mute">{c.cats[i]}</span>
+            <div className="flex w-full flex-1 flex-col gap-3 p-3">
+              <div className="flex items-end justify-between gap-2.5">
+                <div className="flex min-w-0 flex-col gap-1">
+                  <span className="text-sm font-semibold tracking-[0.04em] wrap-anywhere">{p.code}</span>
+                  <span className="text-[11px] tracking-[0.08em] text-mute">{c.cats[i]}</span>
+                </div>
+                <span className="text-[22px] leading-none text-acc">↗</span>
               </div>
-              <span className="text-[22px] leading-none text-acc">↗</span>
+              {/* Prévia da stack — a lista completa fica no Sheet */}
+              <div className="mt-auto flex flex-wrap gap-1">
+                {p.tags.slice(0, TAG_PREVIEW).map((tag) => (
+                  <span key={tag} className="border border-ink px-1.5 py-[3px] text-[10.5px] tracking-[0.04em]">{tag}</span>
+                ))}
+                {p.tags.length > TAG_PREVIEW && (
+                  <span className="border border-line px-1.5 py-[3px] text-[10.5px] tracking-[0.04em] text-mute">
+                    +{p.tags.length - TAG_PREVIEW}
+                  </span>
+                )}
+              </div>
             </div>
           </button>
         ))}

@@ -1,17 +1,20 @@
-import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import { hasLocale } from './dictionaries'
+import type { Metadata, Viewport } from 'next'
+import { Big_Shoulders, IBM_Plex_Mono } from 'next/font/google'
 import { notFound } from 'next/navigation'
+import { hasLocale, locales } from '@/lib/i18n'
 import '@/app/tailwind.css'
 
-const geist = Geist({
+const bigShoulders = Big_Shoulders({
   subsets: ['latin'],
-  variable: '--font-geist',
+  axes: ['opsz'],
+  adjustFontFallback: false,
+  variable: '--font-big-shoulders',
 })
 
-const geistMono = Geist_Mono({
+const plexMono = IBM_Plex_Mono({
   subsets: ['latin'],
-  variable: '--font-geist-mono',
+  weight: ['400', '500', '600'],
+  variable: '--font-plex-mono',
 })
 
 export const metadata: Metadata = {
@@ -29,8 +32,12 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport: Viewport = {
+  themeColor: '#0b0b0c',
+}
+
 export async function generateStaticParams() {
-  return [{ lang: 'en' }, { lang: 'pt' }]
+  return locales.map((lang) => ({ lang }))
 }
 
 export default async function RootLayout({
@@ -44,13 +51,8 @@ export default async function RootLayout({
   if (!hasLocale(lang)) notFound()
 
   return (
-    <html
-      lang={lang}
-      className={`${geist.variable} ${geistMono.variable} scroll-smooth`}
-    >
-      <body className="bg-bg text-fg font-sans antialiased overflow-x-hidden leading-normal font-features-['ss01','cv11']">
-        {children}
-      </body>
+    <html lang={lang} className={`${bigShoulders.variable} ${plexMono.variable}`}>
+      <body className="font-mono antialiased">{children}</body>
     </html>
   )
 }

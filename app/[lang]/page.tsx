@@ -1,15 +1,6 @@
 import { notFound } from 'next/navigation'
-import { getDictionary, hasLocale } from './dictionaries'
-import Header from '@/components/Header'
-import Hero from '@/components/Hero'
-import About from '@/components/About'
-import Stack from '@/components/Stack'
-import Projects from '@/components/Projects'
-import Education from '@/components/Education'
-import Contact from '@/components/Contact'
-import Footer from '@/components/Footer'
-import RevealObserver from '@/components/RevealObserver'
-import MouseGlowHandler from '@/components/MouseGlowHandler'
+import { hasLocale } from '@/lib/i18n'
+import Portfolio from '@/components/Portfolio'
 
 export default async function Page({
   params,
@@ -18,22 +9,6 @@ export default async function Page({
 }) {
   const { lang } = await params
   if (!hasLocale(lang)) notFound()
-  const dict = await getDictionary(lang)
 
-  return (
-    <>
-      <RevealObserver />
-      <MouseGlowHandler />
-      <Header lang={lang} t={dict} />
-      <main className="flex flex-col gap-[clamp(14px,2.8vw,32px)]">
-        <Hero t={dict.hero} />
-        <About t={dict.about} />
-        <Stack t={dict.stack} lang={lang} />
-        <Projects t={dict.projects} lang={lang} />
-        <Education t={dict.education} lang={lang} />
-        <Contact t={dict.contact} />
-      </main>
-      <Footer t={dict.footer}/>
-    </>
-  )
+  return <Portfolio initialLang={lang} />
 }

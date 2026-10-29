@@ -88,19 +88,17 @@ export default function Scanner({ c, edition, reduce }: Props) {
       onPointerDown={track}
       className="relative aspect-[4/5] touch-none border border-ink select-none"
     >
-      <div className="absolute inset-0 grayscale contrast-125 brightness-105">
-        <Image
-          src={portrait}
-          alt="Christian Fonseca"
-          fill
-          preload
-          placeholder="blur"
-          sizes="(max-width: 767px) 100vw, 560px"
-          className="object-cover"
-        />
-      </div>
-      {/* Tinge a foto P&B com o tom do fundo: brancos viram bege, pretos se mantêm */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-bg mix-blend-multiply" />
+      {/* P&B, contraste e tom bege (--bg) já vêm aplicados no arquivo — filtros/blend em CSS
+          faziam a foto não repintar no mobile até um scroll ou rescan */}
+      <Image
+        src={portrait}
+        alt="Christian Fonseca"
+        fill
+        preload
+        placeholder="blur"
+        sizes="(max-width: 767px) 100vw, 560px"
+        className="object-cover"
+      />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-halftone opacity-[0.18]" />
 
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 grid grid-cols-10 grid-rows-12">

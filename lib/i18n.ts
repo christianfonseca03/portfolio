@@ -32,7 +32,7 @@ const pt = {
   cats: ['Plataforma de IA', 'Ranking // TCG', 'Plataforma SaaS', 'Landing page', 'Arquivo // 2023'], running: 'Em execução',
   connT1: 'Vamos', connT2: 'construir_', hold: 'Segure para conectar', holding: 'Conectando', granted: '> Acesso liberado_', skip: 'pular',
   tzT: 'Fusos horários', here: 'meu fuso', lang: 'Idioma', project: 'Projeto', post: 'Post',
-  marquee: ['full-stack', 'next.js', 'ia', 'porto alegre', 'typescript', 'aberto a remoto', 'node.js', 'figma'],
+  marquee: ['full-stack', 'next.js', 'IA', 'typescript', 'node.js', 'react.js', 'tailwind'],
 }
 
 export type Copy = typeof pt
@@ -65,7 +65,7 @@ const en: Copy = {
   cats: ['AI platform', 'Ranking // TCG', 'SaaS platform', 'Landing page', 'Archive // 2023'], running: 'Running',
   connT1: 'Let’s', connT2: 'build_', hold: 'Hold to connect', holding: 'Connecting', granted: '> Access granted_', skip: 'skip',
   tzT: 'Time zones', here: 'my time zone', lang: 'Language', project: 'Project', post: 'Post',
-  marquee: ['full-stack', 'next.js', 'ai', 'porto alegre', 'typescript', 'open to remote', 'node.js', 'figma'],
+  marquee: ['full-stack', 'next.js', 'AI', 'typescript', 'node.js', 'react.js', 'tailwind'],
 }
 
 export const COPY: Record<Locale, Copy> = { pt, en }

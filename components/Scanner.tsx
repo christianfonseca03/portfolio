@@ -47,9 +47,10 @@ function buildGrid(edition: number) {
 type Props = { c: Copy; edition: number; reduce: boolean }
 
 export default function Scanner({ c, edition, reduce }: Props) {
-  const { rank, vox } = useMemo(() => buildGrid(Math.max(edition, 1)), [edition])
   const [scan, setScan] = useState(0)
   const [run, setRun] = useState(0)
+  // Cada rescan sorteia uma nova ordem de revelação e novos voxels
+  const { rank, vox } = useMemo(() => buildGrid(Math.max(edition, 1) + run * 1000), [edition, run])
   const [cx, setCx] = useState(62)
   const [cy, setCy] = useState(38)
 

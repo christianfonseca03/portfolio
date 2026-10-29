@@ -71,6 +71,25 @@ export default function Scanner({ c, edition, reduce }: Props) {
   const shown = reduce ? NCELL : Math.floor(scan)
   const pct = Math.round((shown / NCELL) * 100)
 
+  // Células sem transição de opacidade (120 camadas animadas travavam a pintura da foto no mobile)
+  // e memorizadas para a mira não re-renderizar a grade a cada pointermove.
+  const cells = useMemo(
+    () =>
+      rank.map((rk, i) => {
+        const done = rk < shown
+        const v = vox[i]
+        if (done && !v) return <span key={i} />
+        return (
+          <span
+            key={i}
+            className="shadow-[inset_0_0_0_0.5px_var(--line)]"
+            style={{ background: done && v ? VOX_BG[v] : 'var(--bg)' }}
+          />
+        )
+      }),
+    [rank, vox, shown],
+  )
+
   const track = (e: React.PointerEvent<HTMLDivElement>) => {
     const r = e.currentTarget.getBoundingClientRect()
     setCx(Math.round(clamp((e.clientX - r.left) / r.width, 0, 1) * 1000) / 10)
@@ -86,7 +105,8 @@ export default function Scanner({ c, edition, reduce }: Props) {
     <div
       onPointerMove={track}
       onPointerDown={track}
-      className="relative aspect-[4/5] touch-none border border-ink select-none"
+      // pan-y: no celular a página continua rolando com o dedo sobre a foto; um toque posiciona a mira
+      className="relative aspect-[4/5] touch-pan-y border border-ink select-none"
     >
       {/* P&B, contraste e tom bege (--bg) já vêm aplicados no arquivo — filtros/blend em CSS
           faziam a foto não repintar no mobile até um scroll ou rescan */}
@@ -102,20 +122,7 @@ export default function Scanner({ c, edition, reduce }: Props) {
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-halftone opacity-[0.18]" />
 
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 grid grid-cols-10 grid-rows-12">
-        {rank.map((rk, i) => {
-          const done = rk < shown
-          const v = vox[i]
-          return (
-            <span
-              key={i}
-              className="shadow-[inset_0_0_0_0.5px_var(--line)] transition-opacity duration-180 ease-linear"
-              style={{
-                background: v && done ? VOX_BG[v] : 'var(--bg)',
-                opacity: done ? (v ? 1 : 0) : 1,
-              }}
-            />
-          )
-        })}
+        {cells}
       </div>
 
       <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 w-px bg-acc" style={{ left: `${cx}%` }} />

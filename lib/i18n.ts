@@ -31,7 +31,7 @@ const pt = {
   workT: 'Trabalhos_', logT: ['Trajetória', 'acadêmica_'], blogT: 'Blog_',
   cats: ['Plataforma de IA', 'Ranking // TCG', 'Plataforma SaaS', 'Landing page', 'Arquivo // 2023'], running: 'Em execução',
   connT1: 'Vamos', connT2: 'construir_', hold: 'Segure para conectar', holding: 'Conectando', granted: '> Acesso liberado_', skip: 'pular',
-  nodeT: 'Nó global', here: 'nó atual', lang: 'Idioma', project: 'Projeto', post: 'Post',
+  tzT: 'Fusos horários', here: 'meu fuso', lang: 'Idioma', project: 'Projeto', post: 'Post',
   marquee: ['full-stack', 'next.js', 'ia', 'porto alegre', 'typescript', 'aberto a remoto', 'node.js', 'figma'],
 }
 
@@ -64,7 +64,7 @@ const en: Copy = {
   workT: 'Work_', logT: ['Academic', 'journey_'], blogT: 'Blog_',
   cats: ['AI platform', 'Ranking // TCG', 'SaaS platform', 'Landing page', 'Archive // 2023'], running: 'Running',
   connT1: 'Let’s', connT2: 'build_', hold: 'Hold to connect', holding: 'Connecting', granted: '> Access granted_', skip: 'skip',
-  nodeT: 'Global node', here: 'current node', lang: 'Language', project: 'Project', post: 'Post',
+  tzT: 'Time zones', here: 'my time zone', lang: 'Language', project: 'Project', post: 'Post',
   marquee: ['full-stack', 'next.js', 'ai', 'porto alegre', 'typescript', 'open to remote', 'node.js', 'figma'],
 }
 

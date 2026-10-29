@@ -51,7 +51,9 @@ export default function BuildLog({ c, lang, revealed }: Props) {
                 <h3 className="m-0 text-[15px] leading-[21px] font-semibold md:text-[17px] md:leading-6">{entry.title}</h3>
                 <span className="text-[12.5px] leading-[19px]">{entry.school}</span>
                 {entry.running && (
-                  <span className="block h-2 animate-stripe border border-ink bg-stripes" />
+                  <span className="relative block h-1 overflow-hidden bg-acc">
+                    <span className="absolute inset-y-0 left-0 w-1/3 animate-sweep bg-linear-to-r from-transparent via-acc-l to-transparent motion-reduce:hidden" />
+                  </span>
                 )}
               </div>
             </div>

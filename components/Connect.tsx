@@ -145,7 +145,7 @@ export default function Connect({ c, revealed }: { c: Copy; revealed: boolean })
       </button>
 
       <div className="flex flex-col gap-2.5 pt-[18px]">
-        <span className="text-[11px] tracking-[0.08em] text-paper-dim uppercase">{c.nodeT}</span>
+        <span className="text-[11px] tracking-[0.08em] text-paper-dim uppercase">{c.tzT}</span>
         <div className="grid grid-cols-4 border border-paper-line">
           {ZONES.map(([code, tz], i) => (
             <div
